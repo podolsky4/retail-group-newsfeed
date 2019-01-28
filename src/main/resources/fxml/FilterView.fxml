@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="window" styleClass="window" stylesheets="@../css/styles.css"
+            xmlns="http://javafx.com/javafx/8.0.121"
+            xmlns:fx="http://javafx.com/fxml/1">
+    <top>
+        <HBox styleClass="appbar">
+            <Button fx:id="hamburgerButton" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false">
+                <cursor>
+                    <Cursor fx:constant="HAND" />
+                </cursor>
+                <styleClass>
+                    <String fx:value="menu-button" />
+                    <String fx:value="hamburger-button" />
+                </styleClass>
+            <graphic>
+                <ImageView pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../img/menu.png" />
+                </ImageView>
+            </graphic>
+            </Button>
+        </HBox>
+    </top>
+    <center>
+        <StackPane BorderPane.alignment="CENTER">
+            <ListView fx:id="viewCatArticles" styleClass="scrollbar-custom" StackPane.alignment="CENTER"/>
+            <ListView fx:id="sidebar" styleClass="category-menu" StackPane.alignment="TOP_LEFT"/>
+        </StackPane>
+    </center>
+</BorderPane>

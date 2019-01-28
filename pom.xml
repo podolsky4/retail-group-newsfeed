@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.impltech</groupId>
+  <artifactId>rgn-desktop</artifactId>
+  <version>1.1</version>
+  <packaging>jar</packaging>
+
+  <name>Retail Group News</name>
+  <description> RGN is the client application for cooperation between employees of VK corporation</description>
+
+  <inceptionYear>2018</inceptionYear>
+
+  <developers>
+    <developer>
+      <name>Impltech</name>
+      <email>info@impltech.com</email>
+    </developer>
+  </developers>
+
+  <organization>
+    <name>Impltech</name>
+    <url>http://www.impltech.com</url>
+  </organization>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+    <build-date>${maven.build.timestamp}</build-date>
+
+    <java.version>1.8</java.version>
+    <jersey2.version>2.24</jersey2.version>
+
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+
+    <mainClass>com.impltech.Main</mainClass>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.core</groupId>
+      <artifactId>jersey-client</artifactId>
+      <version>${jersey2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-json-jackson</artifactId>
+      <version>${jersey2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jersey.media</groupId>
+      <artifactId>jersey-media-moxy</artifactId>
+      <version>${jersey2.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.json.bind</groupId>
+      <artifactId>javax.json.bind-api</artifactId>
+      <version>1.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.xmlgraphics</groupId>
+      <artifactId>batik-transcoder</artifactId>
+      <version>1.10</version>
+    </dependency>
+
+    <dependency>
+      <groupId>io.socket</groupId>
+      <artifactId>socket.io-client</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.controlsfx</groupId>
+      <artifactId>controlsfx</artifactId>
+      <version>8.40.14</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.9.1</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+      <!-- Maven Assembly Plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.4.1</version>
+        <configuration>
+          <!-- get all project dependencies -->
+          <descriptorRefs>
+            <descriptorRef>jar-with-dependencies</descriptorRef>
+          </descriptorRefs>
+          <!-- MainClass in mainfest make a executable jar -->
+          <archive>
+            <manifest>
+              <mainClass>com.impltech.Main</mainClass>
+            </manifest>
+          </archive>
+
+        </configuration>
+        <executions>
+          <execution>
+            <id>make-assembly</id>
+            <!-- bind to the packaging phase -->
+            <phase>package</phase>
+            <goals>
+              <goal>single</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>com.zenjava</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>8.8.3</version>
+        <configuration>
+          <vendor>Impltech</vendor>
+          <appName>Retail Group News</appName>
+          <title>Retail Group News</title>
+          <verbose>true</verbose>
+          <needShortcut>true</needShortcut>
+          <needMenu>true</needMenu>
+          <bundleArguments>
+            <identifier>e3ba6cff-d87b-4ca4-9c67-cac0bfd2e231</identifier>
+            <installdirChooser>true</installdirChooser>
+          </bundleArguments>
+          <mainClass>com.impltech.Main</mainClass>
+          <nativeReleaseVersion>${project.version}</nativeReleaseVersion>
+          <allPermissions>true</allPermissions>
+          <jvmArgs>
+            <argument>-Xmx512m</argument>
+            <argument>-Xms256m</argument>
+          </jvmArgs>
+        </configuration>
+        <executions>
+          <execution>
+            <id>create-jfxjar</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build-jar</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>create-native</id>
+            <phase>package</phase>
+            <goals>
+              <goal>build-native</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+</project>

@@ -1,0 +1,286 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Light';
+    src: url('../fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Roboto Medium';
+    src: url('../fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Light';
+    src: url('../fonts/Montserrat-Light.ttf');
+}
+
+@font-face {
+    font-family: 'Montserrat Bold';
+    src: url('../fonts/Montserrat-Bold.ttf');
+}
+
+.window {
+    -fx-pref-width: 600px;
+    -fx-pref-height: 800px;
+}
+
+.btn {
+    -fx-cursor: HAND;
+}
+
+.appbar {
+    -fx-background-color: #47aa43;
+    -fx-padding: 15px;
+}
+
+.appbar-group {
+    -fx-font: 18px "Roboto Light";
+}
+
+.menu-button {
+    -fx-pref-width: 36px;
+    -fx-pref-height: 36px;
+    -fx-background-radius: 18px;
+    -fx-padding: 6;
+}
+
+.hamburger-button {
+    -fx-background-color: transparent;
+}
+
+.hamburger-button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.12);
+}
+
+.like-button, .back-arrow {
+    -fx-background-color: transparent;
+}
+
+.like-button:hover {
+    -fx-background-color: #eeeeee;
+}
+
+.back-arrow:hover {
+    -fx-background-color: #eeeeee;
+}
+
+.article-wrap {
+    -fx-background-color: #fff;
+}
+
+.article-header {
+    -fx-font: 16px "Roboto Light";
+}
+
+.article-title {
+    -fx-font-family: "Roboto Medium";
+}
+
+.article-desc {
+    -fx-font-family: "Roboto";
+}
+
+.article-time  {
+    -fx-font: 14px "Roboto Light";
+    -fx-text-fill: #d8d8d8;
+}
+
+.preview-meta {
+    -fx-font: 13px "Montserrat";
+    -fx-text-fill: #a00;
+}
+
+.article-body {
+    -fx-font-family: "Roboto";
+}
+
+.preview {
+    -fx-spacing: 15px;
+    -fx-padding: 15px;
+}
+
+.preview-media {
+    -fx-fit-to-width: 240px;
+}
+
+.text-area, .text-field {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 17px;
+    -fx-text-fill: #646464;
+}
+
+.text-field {
+    -fx-border-width: 2px;
+    -fx-border-color: #dcdcdc;
+    -fx-background-color: #fff;
+    /*-fx-border-radius: 16;
+    -fx-background-radius: 16;*/
+}
+
+.text-area {
+    -fx-pref-height: 100px;
+}
+
+.comment-text {
+    -fx-font-family: "Roboto Medium";
+    -fx-font-size: 15px;
+    -fx-fill: #484848;
+}
+
+.comment-body {
+    -fx-font-family: "Roboto";
+    -fx-font-size: 14px;
+    -fx-fill: #484848;
+}
+
+.comment-button {
+    -fx-font: 15px "Roboto Medium";
+    -fx-background-color: transparent;
+    -fx-text-fill: #3e89b9;
+    -fx-border-radius: 4px;
+    -fx-padding: 8px;
+}
+
+.comment-button:hover {
+    -fx-background-color: #e9e9e9;
+}
+
+.label-success {
+    -fx-text-fill: #0a0;
+}
+
+.label-error {
+    -fx-text-fill: #a00;
+}
+
+.login-title {
+    -fx-font-family: "Montserrat";
+    -fx-font-size: 32px;
+    -fx-fill: #47aa43;
+}
+
+.login-button {
+    -fx-font-family: "Montserrat Bold";
+    -fx-font-size: 15px;
+    -fx-text-fill: #fff;
+    -fx-padding: 8px, 16px;
+    -fx-background-color: #41a435;
+    -fx-alignment: center;
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+}
+
+.login-button:hover {
+    -fx-background-color: #3d9132;
+}
+
+.login-label {
+    -fx-font: 17px "Montserrat";
+    -fx-fill: #585858;
+}
+
+.category-item {
+    -fx-font: 17px "Roboto";
+    -fx-background-color: #fff;
+    -fx-text-fill: #000;
+    -fx-cursor: hand;
+    -fx-fill-width: true;
+    -fx-pref-width: 245px;
+    -fx-padding: 7 10;
+}
+
+.category-item:hover {
+    -fx-background-color: #f9f9f9;
+}
+
+.category-menu {
+    -fx-background-color: #fff;
+    -fx-max-width: 250px;
+    -fx-max-height: 736px;
+}
+
+.mv-pane {
+    -fx-background-color: black;
+}
+
+.media {
+    -fx-background-color: #eee;
+}
+
+/* Styles for Scrollbar */
+.scrollbar-custom {
+    -fx-border-color: derive(gray,80%);
+    -fx-background-color: transparent;
+}
+
+/* The main scrollbar **track** CSS class  */
+.scrollbar-custom .scroll-bar:horizontal .track,
+.scrollbar-custom .scroll-bar:vertical .track {
+    -fx-background-color: #ebebeb;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-border-radius: 2em;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.scrollbar-custom .scroll-bar:horizontal .increment-button,
+.scrollbar-custom .scroll-bar:horizontal .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 0 10 0;
+}
+
+/* The increment and decrement button CSS class of scrollbar */
+.scrollbar-custom .scroll-bar:vertical .increment-button,
+.scrollbar-custom .scroll-bar:vertical .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0 14 0 0;
+}
+
+.scrollbar-custom .scroll-bar .increment-arrow,
+.scrollbar-custom .scroll-bar .decrement-arrow {
+    -fx-shape: " ";
+    -fx-padding: 0;
+}
+
+/* The main scrollbar **thumb** CSS class which we drag every time (movable) */
+.scrollbar-custom .scroll-bar:horizontal .thumb,
+.scrollbar-custom .scroll-bar:vertical .thumb {
+    -fx-background-color: #b2b2b2;
+    -fx-background-insets: 2, 0, 0;
+    -fx-background-radius: 2em;
+}
+
+/* Color of the list-cell selected + unselected: transparent m*/
+   .list-view .list-cell,
+   .list-view .list-cell:filled,
+   .list-view .list-cell:selected,
+   .list-view .list-cell:focused,
+   .list-view .list-cell:hover {
+       -fx-background-color: transparent;
+       -fx-effect: null;
+   }
+
+   .list-cell {
+       -fx-padding: 1px;
+}
+/* Color of the custom control hover */
+   .list-view .list-cell:hover .card-view {
+       -fx-border-color: #2ea430;
+   }
+
+/* Color of the custom control unselected */
+   .card-view {
+       -fx-border-color: transparent;
+       -fx-background-color: white;
+   }

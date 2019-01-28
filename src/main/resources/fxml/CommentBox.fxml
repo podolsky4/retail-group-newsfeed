@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="550.0" spacing="5.0" style="-fx-border-color: #eee;" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.121">
+    <padding>
+        <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+    </padding>
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment-text" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="article-time" />
+    <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="comment-body" wrappingWidth="520.0" />
+</VBox>

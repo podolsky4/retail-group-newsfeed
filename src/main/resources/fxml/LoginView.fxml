@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import impl.org.controlsfx.skin.DecorationPane?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.impltech.controller.LoginController">
+    <styleClass>
+        <String fx:value="window" />
+        <String fx:value="article-wrap" />
+    </styleClass>
+    <ImageView fitHeight="800.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" styleClass="window">
+        <Image url="@../img/cover.jpg" />
+    </ImageView>
+    <AnchorPane>
+      <DecorationPane layoutX="125.0" layoutY="379.0" prefWidth="350.0" styleClass="article-wrap">
+         <children>
+              <VBox fx:id="loginForm" prefWidth="300.0" spacing="15.0">
+                  <Text fill="#0d9e39" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-title" text="    Авторизация">
+                  </Text>
+                  <Label alignment="TOP_LEFT" styleClass="login-label" text="Имя пользователя" textFill="#5b5757">
+                  <font>
+                     <Font name="Roboto" size="16.0" />
+                  </font></Label>
+                  <TextField fx:id="login" prefWidth="300.0" styleClass="text-field" />
+                  <Label styleClass="login-label" text="Пароль" />
+                  <PasswordField fx:id="password" prefWidth="300.0">
+                      <tooltip>
+                          <Tooltip text="Пароль должен быть не менее 12 символов" />
+                      </tooltip>
+                  </PasswordField>
+                  <HBox>
+                      <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#submitRequest" prefWidth="300.0" styleClass="login-button" text="ВОЙТИ" textAlignment="CENTER" wrapText="true">
+                          <cursor>
+                              <Cursor fx:constant="HAND" />
+                          </cursor>
+                      </Button>
+                  </HBox>
+                  <Label fx:id="alert" alignment="CENTER" styleClass="preview-meta" wrapText="true" />
+               <padding>
+                  <Insets bottom="20.0" left="30.0" right="30.0" top="20.0" />
+               </padding>
+              </VBox>
+         </children>
+         <effect>
+            <DropShadow blurType="GAUSSIAN" height="17.97" offsetY="3.0" radius="7.725" spread="0.01" width="14.93" />
+         </effect></DecorationPane>
+    </AnchorPane>
+</StackPane>
